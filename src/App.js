@@ -5,11 +5,11 @@ import Button from './components/Button'
 import CalcProvider from "./context/CalcContext";
 
 const btnValues = [
-  ["C", "+-", "%", "/"],
+  ["C", "+-", "/", ],
   [7, 8, 9, "x"],
   [4, 5, 6, "-"],
   [1, 2, 3, "+"],
-  [0, ".", "="],
+  [".", 0, "="],
 ];
 
 function App() {

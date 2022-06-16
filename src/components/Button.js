@@ -8,12 +8,14 @@ const getStyleName = btn => {
     '-': 'opt',
     '+': 'opt',
     '/': 'opt',
+    'C': 'clearAll'
   }
   return className[btn]
 }
 
 const Button = ({ value }) => {
   const { calc, setCalc } = useContext(CalcContext);
+  
 
   // Click en el punto
   const commaClick = () => {
@@ -26,6 +28,8 @@ const Button = ({ value }) => {
   const resetClick = () => {
     setCalc({ sign: '', num: 0, res: 0 })
   }
+
+
   // Click en un numero
   const handleClickButton = () => {
     const numberString = value.toString()
@@ -69,14 +73,7 @@ const Button = ({ value }) => {
       })
     }
   }
-  // Tanto porciento
-  const persenClick = () => {
-    setCalc({
-      num: (calc.num / 100),
-      res: (calc.res / 100),
-      sign: ''
-    })
-  }
+ 
   // Click en botton para invertir numero de + a - o viceversa
   const invertClick = () => {
     setCalc({
@@ -96,7 +93,6 @@ const Button = ({ value }) => {
       '-': signClick,
       '+': signClick,
       '=': equalsClick,
-      '%': persenClick,
       '+-': invertClick
     }
     if(results[value]) {
